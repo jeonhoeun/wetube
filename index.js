@@ -1,19 +1,11 @@
 console.log("start file")
-var express = require('express')
+import express from "express";
+//var express = require('express')
 var app = express()
 const PORT = 4000
-function handleListen(){
-  console.log(`Listening on : http://localhost:${PORT}`)
-}
-
-function handleGetSubPath(req,res){
-  res.send("Here is Subpath")
-}
-
-function handleGetHome(req,res){
-  //console.log(req)
-  res.send("from home")
-}
+const handleListen = () => console.log(`Listening on : http://localhost:${PORT}`)
+const handleGetSubPath = (req,res) =>  res.send("Here is Subpath")
+const handleGetHome = (req,res) => res.send("from home")
 app.listen(PORT, handleListen)
 
 app.get("/",handleGetHome)

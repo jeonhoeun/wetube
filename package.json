@@ -4,12 +4,18 @@
   "description": "youtube clone with VanillaJS",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jeonhoeun",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
