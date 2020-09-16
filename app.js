@@ -4,6 +4,7 @@ import express from "express"
 import helmet from "helmet" // 보안 미들웨어
 import cookieParser from "cookie-parser" 
 import bodyParser from "body-parser"
+import routes from "./routes"
 import globalRouter from "./routers/globalRouter"
 import userRouter from "./routers/userRouter"
 import videoRouter from "./routers/videoRouter"
@@ -15,7 +16,8 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(helmet())
-app.use("/",globalRouter)
-app.use("/users",userRouter) // use 는 /user로 접근시 userRouter를 사용한다는것임
-app.use("/videos",videoRouter)
+
+app.use(routes.home,globalRouter)
+app.use(routes.users,userRouter) // use 는 /user로 접근시 userRouter를 사용한다는것임
+app.use(routes.videos,videoRouter)
 export default app
