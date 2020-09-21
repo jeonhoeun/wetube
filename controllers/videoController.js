@@ -1,6 +1,6 @@
 import { reset } from "nodemon"
 
-export const home = (req,res) => res.render("home")
+export const home = (req,res) => res.render("home", {pageTitle:'Home'})
 export const search = (req,res) => res.send("Search")
 
 export const videos = (req,res) => reset.send("Videos")
